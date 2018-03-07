@@ -11,7 +11,7 @@ Version 1.0
 
 Most of this code is taken from Mods\WorldGen\DolphinShrine.cs
 
-Usage: /generateshrine [number],[size]
+**Usage:** /generateshrine [number],[size]
 Parameters are optional.
 number - (default: 1) The number of shrines you want to generate.
 size - (default: 12) A number from 1 to 20. Any bigger and it starts messing up the coordinates.
