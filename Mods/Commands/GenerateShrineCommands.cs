@@ -33,7 +33,7 @@ namespace Eco.Mods
         [ChatCommand("Generate one or more shrines at random locations in the world.", ChatAuthorizationLevel.Admin)]
         public static void GenerateShrine(User user, int numberOfShrines = 1, int shrineSize = 12)
         {
-			if(shrineSize < 1 || shrineSize > 20)
+            if (shrineSize < 1 || shrineSize > 20)
             {
                 ChatManager.DebugAddToChatLog("#Shrine location", "Shrine size must be between 1 and 20", user.Name, 1);
                 return;
