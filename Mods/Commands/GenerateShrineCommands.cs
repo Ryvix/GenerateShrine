@@ -1,13 +1,21 @@
-﻿// Generate Shrine
-// Adds a command to generate one or more shrines.
-// Most of this code is taken from Mods\WorldGen\DolphinShrine.cs
+﻿/**
+# Generate Shrine
+Version 1.0
 
-// Usage: /generateshrine [number],[size]
-// number (optional) - The number of shrines you want to generate.
-// size (optional) - A number from 1 to 20. Any bigger and it starts messing up the coordinates.
+* Adds an admin command to generate one or more shrines at random locations in the world.
+* Useful for adding a shrine to an older pre-7.2 world or just if you want more for some reason (pretty lights).
+* Gives coordinates in chat that you can click to set a waypoint.
+* You can pick them up with a hammer and place them somewhere else.
 
-// Copyright (c) Strange Loop Games. All rights reserved.
-// See LICENSE file in the project root for full license information.
+**Warning:** This will replace anything in the random location it picks. Make sure to backup your server before you use it!
+
+Most of this code is taken from Mods\WorldGen\DolphinShrine.cs
+
+Usage: /generateshrine [number],[size]
+Parameters are optional.
+number - (default: 1) The number of shrines you want to generate.
+size - (default: 12) A number from 1 to 20. Any bigger and it starts messing up the coordinates.
+ */
 
 namespace Eco.Mods
 {
@@ -22,7 +30,7 @@ namespace Eco.Mods
 
     public class GenerateShrineCommands : IChatCommandHandler
     {
-        [ChatCommand("Generates a shrine.", ChatAuthorizationLevel.Admin)]
+        [ChatCommand("Generate one or more shrines at random locations in the world.", ChatAuthorizationLevel.Admin)]
         public static void GenerateShrine(User user, int numberOfShrines = 1, int shrineSize = 12)
         {
 			if(shrineSize < 1 || shrineSize > 20)
